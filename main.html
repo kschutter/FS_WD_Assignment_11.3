@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Assignment 3</title>
+</head>
+<body>
+ <a id="google" target="_self" href="https://www.w3resource.com/">google</a>
+ <div id="attrs"></div>
+ <button id="showAttr">Show Attributes Of link</button>
+ <button id="removeAttr">Remove Result</button>
+</body>
+<script>
+    // Sets the text of div(id=attrs) to the three attributes of the anchor tag
+    function showAttr() {
+        var div = document.getElementById("attrs");
+        var show = document.getElementById("google");
+        div.innerHTML = "id = " + show.getAttribute("id") + "<br/>";
+        div.innerHTML += "target = " + show.getAttribute("target") + "<br/>";
+        div.innerHTML += "href = " + show.getAttribute("href") + "<br/>";
+    }
+    
+    // Removes the text set by showAttr()
+    function clearAttr() {
+        document.getElementById("attrs").innerHTML = "";
+    }
+
+    // Adds an eventListener to the showAttr button
+    var showButton = document.getElementById("showAttr");
+    showButton.addEventListener("click", showAttr);
+
+    // Adds an eventListener to the removeAttr button
+    var removeButton = document.getElementById("removeAttr");
+    removeButton.addEventListener("click", clearAttr);
+</script>
+</html>
